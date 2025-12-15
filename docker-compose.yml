@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: cw-postgres
+    environment:
+      POSTGRES_USER: cw
+      POSTGRES_PASSWORD: cw
+      POSTGRES_DB: cw
+    ports:
+      - "5433:5432"
+    volumes:
+      - cw_pg:/var/lib/postgresql/data
+volumes:
+  cw_pg:
