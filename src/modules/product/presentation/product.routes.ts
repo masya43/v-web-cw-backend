@@ -40,6 +40,7 @@ productRouter.get("/", async (req, res) => {
       description: p.description,
       imageUrl: p.imageUrl,
       priceRub: getCurrentPriceRub(p.prices),
+      ozonUrl: p.ozonUrl, 
       categories: (p.categories ?? []).map((c) => ({ id: c.id, name: c.name, slug: c.slug })),
     })),
   );
@@ -65,6 +66,7 @@ productRouter.get("/:id", async (req, res) => {
     description: p.description,
     imageUrl: p.imageUrl,
     priceRub: getCurrentPriceRub(p.prices),
+    ozonUrl: p.ozonUrl, 
     categories: (p.categories ?? []).map((c) => ({ id: c.id, name: c.name, slug: c.slug })),
   });
 });

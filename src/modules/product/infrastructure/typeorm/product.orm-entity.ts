@@ -32,6 +32,9 @@ export class ProductOrmEntity {
     inverseJoinColumn: { name: "categoryId", referencedColumnName: "id" },
   })
   categories!: CategoryOrmEntity[];
+  
+  @Column({ nullable: true })
+  ozonUrl?: string;
 
   @OneToMany(() => ProductPriceOrmEntity, (pp) => pp.product, { cascade: true })
   prices!: ProductPriceOrmEntity[];
